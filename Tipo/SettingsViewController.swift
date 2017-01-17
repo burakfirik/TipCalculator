@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
 
     self.view.addSubview(themeControl)
     
-    themeControl.addTarget(self, action: "themeControlValueChanged", for:.valueChanged)
+    themeControl.addTarget(self, action: #selector(SettingsViewController.themeControlValueChanged), for:.valueChanged)
     addThemeControlConstraint()
     themeControl.translatesAutoresizingMaskIntoConstraints = false
   }
@@ -47,7 +47,7 @@ class SettingsViewController: UIViewController {
   
   func addThemeControlConstraint() {
     let leadingConstraint = NSLayoutConstraint(item: themeControl, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: themeControl.superview , attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 10)
-    let trailingConstraint = NSLayoutConstraint(item: defaultTipControl.superview, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: themeControl , attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
+    let trailingConstraint = NSLayoutConstraint(item: defaultTipControl.superview!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: themeControl , attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
     
     let topConstraint = NSLayoutConstraint(item: themeControl, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: defaultTipControl, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 50)
     NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint])
@@ -63,7 +63,7 @@ class SettingsViewController: UIViewController {
 
     self.view.addSubview(defaultTipControl)
 
-    defaultTipControl.addTarget(self, action: "tipControlValueChanged", for:.valueChanged)
+    defaultTipControl.addTarget(self, action: #selector(SettingsViewController.tipControlValueChanged), for:.valueChanged)
 
     addTipControlConstraint()
     
@@ -79,7 +79,7 @@ class SettingsViewController: UIViewController {
   func addTipControlConstraint() {
     let heightConst = self.navigationController!.navigationBar.frame.size.height + 50
     let leadingConstraint = NSLayoutConstraint(item: defaultTipControl, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: defaultTipControl.superview , attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 10)
-    let trailingConstraint = NSLayoutConstraint(item: defaultTipControl.superview, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: defaultTipControl , attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
+    let trailingConstraint = NSLayoutConstraint(item: defaultTipControl.superview!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: defaultTipControl , attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
     
     let topConstraint = NSLayoutConstraint(item: defaultTipControl, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: heightConst)
     

@@ -11,7 +11,7 @@ class TipViewController: UIViewController {
   var plusLabel = UILabel()
   var equalLabel = UILabel()
 
-  var resultView = UIView(frame: CGRect(x: 0, y: 164, width: 375, height: 161))
+  var resultView = UIView(frame: CGRect(x: 0, y: 160, width: 370, height: 160))
   var tipView = UIView()
   var topBillFieldConsraint: NSLayoutConstraint!
   
@@ -86,7 +86,7 @@ class TipViewController: UIViewController {
     equalLabel.translatesAutoresizingMaskIntoConstraints = false
     tipView.translatesAutoresizingMaskIntoConstraints = false
    
-    tipControl.addTarget(self, action: "calculateTip", for: UIControlEvents.valueChanged)
+    tipControl.addTarget(self, action: #selector(TipViewController.calculateTip), for: UIControlEvents.valueChanged)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -101,10 +101,10 @@ class TipViewController: UIViewController {
     let plustLabelTopConstraint = NSLayoutConstraint(item: plusLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: plusLabel.superview, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 15)
     let plusLabelLeadingConstraint = NSLayoutConstraint(item: plusLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: plusLabel.superview, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 35)
     let tipLabelLeadingConstraint = NSLayoutConstraint(item: tipLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: tipLabel.superview, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 70)
-    let tipLabelTrailingConstraint = NSLayoutConstraint(item: tipLabel.superview, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: tipLabel, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
+    let tipLabelTrailingConstraint = NSLayoutConstraint(item: tipLabel.superview!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: tipLabel, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
     let tipLabelCenterYConstraint = NSLayoutConstraint(item: tipLabel, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: plusLabel, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
     let totalLabelLeadingConstraint = NSLayoutConstraint(item: totalLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: tipLabel, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
-    let totalLabelTrailingConstraint = NSLayoutConstraint(item: totalLabel.superview, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem:totalLabel , attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
+    let totalLabelTrailingConstraint = NSLayoutConstraint(item: totalLabel.superview!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem:totalLabel , attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
     let totalLabelCenterYConstraint = NSLayoutConstraint(item: totalLabel, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: equalLabel, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
     let eqLabelTopConstraint = NSLayoutConstraint(item: equalLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: plusLabel, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 15)
     let eqLabelCenterConstraint = NSLayoutConstraint(item: equalLabel, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: plusLabel, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
@@ -113,7 +113,7 @@ class TipViewController: UIViewController {
   
   public func addTipViewConstraint() {
     let leadingTipViewConstraint = NSLayoutConstraint(item: tipView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: tipControl.superview, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
-    let trailingTipViewConstraint = NSLayoutConstraint(item: tipView.superview, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: tipView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+    let trailingTipViewConstraint = NSLayoutConstraint(item: tipView.superview!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: tipView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
     let bottomTipViewConstraint = NSLayoutConstraint(item: tipView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: tipView.superview, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
     let topTipViewConstraint = NSLayoutConstraint(item: tipView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: tipControl, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant:7)
     NSLayoutConstraint.activate([leadingTipViewConstraint, trailingTipViewConstraint, bottomTipViewConstraint, topTipViewConstraint])
@@ -138,7 +138,7 @@ class TipViewController: UIViewController {
   
   public func addTipControlConstraint() {
     let leadingTipControlConstraint = NSLayoutConstraint(item: tipControl, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: tipControl.superview, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 10)
-    let trailingTipControlConstraint = NSLayoutConstraint(item: tipControl.superview, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: tipControl, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
+    _ = NSLayoutConstraint(item: tipControl.superview!, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: tipControl, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 10)
     let topTipControlConstraint = NSLayoutConstraint(item: tipControl, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: tipControl.superview, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 7)
     let widthTipControlConstraint = NSLayoutConstraint(item: tipControl, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.width, multiplier: 0, constant: SCREEN_SIZE.size.width - 20)
     NSLayoutConstraint.activate([leadingTipControlConstraint, topTipControlConstraint, topTipControlConstraint, widthTipControlConstraint])
@@ -161,8 +161,8 @@ class TipViewController: UIViewController {
     billField.backgroundColor = UIColor.clear
     billField.font =  UIFont (name:"HelveticaNeue", size: 50.0)
     billField.keyboardType = UIKeyboardType.decimalPad
-    billField.addTarget(self, action: "calculateTip", for: UIControlEvents.editingChanged)
-    billField.addTarget(self, action: "calculateTip", for: UIControlEvents.editingDidEnd)
+    billField.addTarget(self, action: #selector(TipViewController.calculateTip), for: UIControlEvents.editingChanged)
+    billField.addTarget(self, action: #selector(TipViewController.calculateTip), for: UIControlEvents.editingDidEnd)
 
     addConstraintsBillField()
 
@@ -191,6 +191,7 @@ class TipViewController: UIViewController {
 
     Utils.sharedUtils.setTipPercentIndex(index: selectedIndex)
 
+    
     let bill = Double(billField.text!) ?? 0
 
     Utils.sharedUtils.setBill(bill: bill)
@@ -229,7 +230,7 @@ class TipViewController: UIViewController {
     let sharedUtils = Utils.sharedUtils
     self.navigationController?.navigationBar.backgroundColor = sharedUtils.themeColors[0]
     navigationItem.title = "Tip Calculator"
-    let rightButton = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: "settingsButtonClicked")
+    let rightButton = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(TipViewController.settingsButtonClicked))
     self.navigationItem.rightBarButtonItem = rightButton
   }
  
