@@ -30,11 +30,12 @@ on the user interface. Iterated to ensure users love the app.
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
-iPhone5s
+
+
 <img src='https://raw.githubusercontent.com/burakfirik/TipCalculator/master/iPhone5s.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
-iPhone7
+
 <img src='https://github.com/burakfirik/TipCalculator/blob/master/iPhone7.gif?raw=true' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
