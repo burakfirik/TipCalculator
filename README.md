@@ -26,6 +26,7 @@ on the user interface. Iterated to ensure users love the app.
 - [X] No storybord is used, I did it programmatically to display advanced knowledge of iOS
 - [X] All the UI Elements are added using programatic autolayout constraints
 - [X] Interface is beautifully displayed for all the iOS devices with autolayout constraints 
+- [X] Added Dark/Light theme colors
 
 ## Video Walkthrough 
 
