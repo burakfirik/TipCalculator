@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Tipo
-//
-//  Created by Burak Firik on 1/12/17.
-//  Copyright © 2017 Code Path. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -16,15 +8,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     self.window = UIWindow(frame: UIScreen.main.bounds)
-
-    let nav1 = UINavigationController()
-    nav1.title = "TIP"
-
+    let navigationController = UINavigationController()
     let mainView = TipViewController(nibName: nil, bundle: nil)
-    nav1.viewControllers = [mainView]
-    self.window!.rootViewController = nav1
+    navigationController .viewControllers = [mainView]
+    self.window!.rootViewController = navigationController
     self.window?.makeKeyAndVisible()
-   
+    
     return true
   }
   
