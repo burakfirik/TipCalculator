@@ -31,11 +31,11 @@ on the user interface. Iterated to ensure users love the app.
 
 Here's a walkthrough of implemented user stories:
 iPhone5s
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/nxRYc"><a href="//imgur.com/nxRYc"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src='https://raw.githubusercontent.com/burakfirik/TipCalculator/master/iPhone5s.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 iPhone7
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/2dvZg"><a href="//imgur.com/2dvZg"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src='https://github.com/burakfirik/TipCalculator/blob/master/iPhone7.gif?raw=true' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
